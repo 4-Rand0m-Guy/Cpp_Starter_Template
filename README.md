@@ -8,7 +8,8 @@ the pitchfork layout see this [reference](https://api.csswg.org/bikeshed/?force=
 The project structure should look as follows:
 
 ```Project/  
-|--build/  
+|--build/
+    |--local/
 |--src/  
     |--main.cpp  
     |--package/  
