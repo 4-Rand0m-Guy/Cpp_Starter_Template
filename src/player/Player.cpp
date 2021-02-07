@@ -1,28 +1,28 @@
 #include "Player.hpp"
 
 #include <iostream>
+#include <utility>
 
 /*
   Need to initialize static members in the cpp
 */
 int Player::num_players{0};
 
-
 /*
   Overload examples
 */
 Player::Player()
     : Player{"None", 0, 0} {
-  std::cout << "Default constructor for: " << name  << std::endl;
+  std::cout << "Default constructor for: " << name << std::endl;
 }
 
 Player::Player(std::string name_v)
-    : Player{name_v, 0, 0} {
-  std::cout << "One arg constructor for: " << name  << std::endl;
+    : Player{std::move(name_v), 0, 0} {
+  std::cout << "One arg constructor for: " << name << std::endl;
 }
 
 Player::Player(std::string name_v, int health_v, int xp_v)
-    : name{name_v},
+    : name{std::move(name_v)},
       health{health_v},
       xp{xp_v} {
   std::cout << "Three arg constructor for: " << name << std::endl;
@@ -70,5 +70,5 @@ int Player::get_xp() const {
 }
 
 void Player::set_name(std::string name_v) {
-  name = name_v;
+  name = std::move(name_v);
 }
