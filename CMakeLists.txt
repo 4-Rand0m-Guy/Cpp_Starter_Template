@@ -8,11 +8,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Add compiler options
 string(APPEND ${CMAKE_CXX_FLAGS} "-Wall")
 
-
 # Using the "cmake_find_package" generator from conan
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})
 set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR} ${CMAKE_PREFIX_PATH})
 
+include_directories(src)
 
 add_subdirectory(src)
 add_subdirectory(test)

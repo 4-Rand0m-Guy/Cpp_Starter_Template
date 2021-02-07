@@ -1,5 +1,4 @@
-#include "../../src/player/Player.hpp"
-
+#include <player/Player.hpp>
 #include <gtest/gtest.h>
 #include <string>
 
