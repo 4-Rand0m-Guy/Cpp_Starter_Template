@@ -3,10 +3,10 @@
 set -e
 set -x
 
-rm -rf build
-mkdir build
-cd build
+rm -rf build-debug
+mkdir build-debug
+cd build-debug
 
 conan install .. -s build_type=Debug
-cmake .. -DCAMKE_BUILD_TYPE=Debug
+cmake .. -DCMAKE_BUILD_TYPE=Debug
 cmake --build .
