@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add compiler options
-string(APPEND ${CMAKE_CXX_FLAGS} "-Wall")
+add_compile_options(-Wall -Werror)
 
 # Using the "cmake_find_package" generator from conan
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})
