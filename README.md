@@ -1,22 +1,30 @@
 # C++ Starter Template  
 
-A new project starting template for C++ project using CMake and developed in VS Code
+A new project starting template for C++ project using CMake and conan
 
 The CMake and vscode project configuration files templates are intended for projects that are structured according to
 the pitchfork layout see this [reference](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs) for detailed information.
 
 The project structure should look as follows:
 
-```Project/  
-|--build/
-    |--local/
-|--src/  
-    |--main.cpp  
-    |--package/  
-        |--package.cpp  
-        |--package.hpp  
-|--tests/  
-|--docs/  
+```text
+Project/  
+    |--build/
+    |--docs/ 
+    |--lib/ 
+    |--src/  
+        |--main.cpp  
+        |--package/  
+            |--package.cpp  
+            |--package.hpp  
+        CMakeLists.txt
+    |--test/
+        |--mainTestRunner.cpp
+        |--package/  
+            |--package-test.cpp 
+        CMakeLists.txt
 .gitignore  
-CMakeLists.txt  
-README.md```  
+CMakeLists.txt 
+conanfile.txt
+README.md
+```  

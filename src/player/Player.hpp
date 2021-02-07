@@ -17,7 +17,7 @@ class Player {
   */
   Player();
 
-  Player(std::string name_v);
+  explicit Player(std::string name_v);
 
   Player(std::string name_v, int health_v, int xp_v);
 
@@ -47,11 +47,11 @@ class Player {
    */
   void print_player() const;
 
-  std::string get_name() const;
+  [[nodiscard]] std::string get_name() const;
 
-  int get_health() const;
+  [[nodiscard]] int get_health() const;
 
-  int get_xp() const;
+  [[nodiscard]] int get_xp() const;
 
   void set_name(std::string name_v);
 };

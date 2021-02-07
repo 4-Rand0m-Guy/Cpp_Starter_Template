@@ -1,3 +1,5 @@
+#include "player/Player.hpp"
+
 #include <iostream>
 
 int main(int, char**) {

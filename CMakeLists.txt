@@ -4,26 +4,15 @@ project(NewProjectTemplate VERSION 0.1.0)
 # Set standard and enforce
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 # Add compiler options
-string(APPEND ${CMAKE_CXX_FLAGS} "-Wall")
+add_compile_options(-Wall -Werror)
 
-# Set package variables
-set(SOURCE_DIR "src")
-set(PLAYER_DIR ${SOURCE_DIR}/player)
+# Using the "cmake_find_package" generator from conan
+set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR} ${CMAKE_MODULE_PATH})
+set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR} ${CMAKE_PREFIX_PATH})
 
-# Set package contents
-set(PLAYER
-    ${PLAYER_DIR}/Player.cpp
-    ${PLAYER_DIR}/Player.hpp
-)
+include_directories(src)
 
-# Add all submodules to executable
-add_executable(${CMAKE_PROJECT_NAME} 
-    ${SOURCE_DIR}/main.cpp 
-    ${PLAYER} 
-)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-
-include(CPack)
+add_subdirectory(src)
+add_subdirectory(test)
